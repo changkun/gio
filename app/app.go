@@ -44,3 +44,7 @@ func DataDir() (string, error) {
 func Main() {
 	osMain()
 }
+
+// CallOnMainThread calls the given f on the main thread,
+// and blocks until f is returned.
+func CallOnMainThread(f func()) { runOnMain(f) }

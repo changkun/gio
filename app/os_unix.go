@@ -21,6 +21,10 @@ func osMain() {
 	select {}
 }
 
+func runOnMain(f func()) {
+	panic("unsupported")
+}
+
 type windowDriver func(*callbacks, []Option) error
 
 // Instead of creating files with build tags for each combination of wayland +/- x11

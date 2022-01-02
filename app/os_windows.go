@@ -88,6 +88,10 @@ func osMain() {
 	select {}
 }
 
+func runOnMain(f func()) {
+	panic("unsupported")
+}
+
 func newWindow(window *callbacks, options []Option) error {
 	cerr := make(chan error)
 	go func() {
