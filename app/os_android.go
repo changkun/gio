@@ -930,7 +930,7 @@ func Java_org_gioui_GioView_onKeyEvent(env *C.JNIEnv, class C.jclass, handle C.j
 		if pressed == C.JNI_TRUE {
 			state = key.Press
 		}
-		w.callbacks.Event(key.Event{Name: n, State: state})
+		w.callbacks.Event(key.Event{Name: n, State: state, Code: int(keyCode)})
 	}
 	if pressed == C.JNI_TRUE && r != 0 && r != '\n' { // Checking for "\n" to prevent duplication with key.NameEnter (gio#224).
 		w.callbacks.EditorInsert(string(rune(r)))

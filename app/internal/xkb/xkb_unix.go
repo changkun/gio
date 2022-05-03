@@ -165,6 +165,7 @@ func (x *Context) DispatchKey(keyCode uint32, state key.State) (events []event.E
 			Name:      name,
 			Modifiers: x.Modifiers(),
 			State:     state,
+			Code:      int(keyCode),
 		}
 		// Ensure that a physical backtab key is translated to
 		// Shift-Tab.

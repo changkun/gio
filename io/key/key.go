@@ -125,6 +125,8 @@ type Event struct {
 	Modifiers Modifiers
 	// State is the state of the key when the event was fired.
 	State State
+	// Code of the key. This code is not reliable and platform dependend.
+	Code int
 }
 
 // An EditEvent requests an edit by an input method.

@@ -256,6 +256,7 @@ func windowProc(hwnd syscall.Handle, msg uint32, wParam, lParam uintptr) uintptr
 				Name:      n,
 				Modifiers: getModifiers(),
 				State:     key.Press,
+				Code:      int(wParam),
 			}
 			if msg == windows.WM_KEYUP || msg == windows.WM_SYSKEYUP {
 				e.State = key.Release

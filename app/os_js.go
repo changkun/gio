@@ -333,11 +333,13 @@ func (w *window) keyboard(hint key.InputHint) {
 
 func (w *window) keyEvent(e js.Value, ks key.State) {
 	k := e.Get("key").String()
+	c := e.Get("keyCode").Int()
 	if n, ok := translateKey(k); ok {
 		cmd := key.Event{
 			Name:      n,
 			Modifiers: modifiersFor(e),
 			State:     ks,
+			Code:      c,
 		}
 		w.w.Event(cmd)
 	}
